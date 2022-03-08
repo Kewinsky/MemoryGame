@@ -1,0 +1,9 @@
+* All scores *
+|Name	|Time		|Chances|
+|Kewin	|0:16.075	|3	|
+|Zuzia	|0:15.085	|3	|
+|Pawel	|0:08.909	|2	|
+|Karol	|0:15.159	|2	|
+|Michal	|0:16.906	|3	|
+|Adam	|0:13.823	|3	|
+|Robert	|0:08.377	|2	|

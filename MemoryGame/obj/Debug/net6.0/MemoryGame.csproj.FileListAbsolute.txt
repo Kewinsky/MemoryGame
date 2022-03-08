@@ -1,0 +1,15 @@
+C:\Users\kewsw\OneDrive\Pulpit\Coding\C#\MemoryGame\MemoryGame\bin\Debug\net6.0\MemoryGame.exe
+C:\Users\kewsw\OneDrive\Pulpit\Coding\C#\MemoryGame\MemoryGame\bin\Debug\net6.0\MemoryGame.deps.json
+C:\Users\kewsw\OneDrive\Pulpit\Coding\C#\MemoryGame\MemoryGame\bin\Debug\net6.0\MemoryGame.runtimeconfig.json
+C:\Users\kewsw\OneDrive\Pulpit\Coding\C#\MemoryGame\MemoryGame\bin\Debug\net6.0\MemoryGame.dll
+C:\Users\kewsw\OneDrive\Pulpit\Coding\C#\MemoryGame\MemoryGame\bin\Debug\net6.0\ref\MemoryGame.dll
+C:\Users\kewsw\OneDrive\Pulpit\Coding\C#\MemoryGame\MemoryGame\bin\Debug\net6.0\MemoryGame.pdb
+C:\Users\kewsw\OneDrive\Pulpit\Coding\C#\MemoryGame\MemoryGame\obj\Debug\net6.0\MemoryGame.csproj.AssemblyReference.cache
+C:\Users\kewsw\OneDrive\Pulpit\Coding\C#\MemoryGame\MemoryGame\obj\Debug\net6.0\MemoryGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kewsw\OneDrive\Pulpit\Coding\C#\MemoryGame\MemoryGame\obj\Debug\net6.0\MemoryGame.AssemblyInfoInputs.cache
+C:\Users\kewsw\OneDrive\Pulpit\Coding\C#\MemoryGame\MemoryGame\obj\Debug\net6.0\MemoryGame.AssemblyInfo.cs
+C:\Users\kewsw\OneDrive\Pulpit\Coding\C#\MemoryGame\MemoryGame\obj\Debug\net6.0\MemoryGame.csproj.CoreCompileInputs.cache
+C:\Users\kewsw\OneDrive\Pulpit\Coding\C#\MemoryGame\MemoryGame\obj\Debug\net6.0\MemoryGame.dll
+C:\Users\kewsw\OneDrive\Pulpit\Coding\C#\MemoryGame\MemoryGame\obj\Debug\net6.0\ref\MemoryGame.dll
+C:\Users\kewsw\OneDrive\Pulpit\Coding\C#\MemoryGame\MemoryGame\obj\Debug\net6.0\MemoryGame.pdb
+C:\Users\kewsw\OneDrive\Pulpit\Coding\C#\MemoryGame\MemoryGame\obj\Debug\net6.0\MemoryGame.genruntimeconfig.cache

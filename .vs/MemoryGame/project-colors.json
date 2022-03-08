@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5307bda3-e483-46ca-856c-3179419a2322": {
+      "ProjectGuid": "5307bda3-e483-46ca-856c-3179419a2322",
+      "DisplayName": "MemoryGame",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
