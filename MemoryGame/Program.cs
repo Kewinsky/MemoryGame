@@ -64,7 +64,7 @@ namespace HelloWorld
                 switch (difficulty)
                 {
                     case 1:
-                        elements = 2;
+                        elements = 4;
                         covered = new string[elements * 2];
                         uncovered = new string[elements * 2];
                         attempts = 10;
