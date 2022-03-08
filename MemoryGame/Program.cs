@@ -51,10 +51,11 @@ namespace HelloWorld
                 Console.WriteLine("1 - easy");
                 Console.WriteLine("2 - hard");
                 Console.WriteLine("3 - info");
+                Console.WriteLine("4 - ranking");
 
                 // wybor tryby przez uzytkownika
                 Console.Write("\nPlease choose difficulty: ");
-                while (!int.TryParse(Console.ReadLine(), out difficulty) || difficulty <= 0 || difficulty > 3)
+                while (!int.TryParse(Console.ReadLine(), out difficulty) || difficulty <= 0 || difficulty > 4)
                     Console.Write("Not integer or wrong index, try again: ");
                 Console.Clear();
                 // --------------------------------------------------------------------------
@@ -78,6 +79,9 @@ namespace HelloWorld
                         break;
                     case 3:
                         Info();
+                        break;
+                    case 4:
+                        Ranking();
                         break;
                 }
             } while (difficulty != 1 && difficulty != 2);
@@ -184,7 +188,11 @@ namespace HelloWorld
         public static void Ranking()
         {
             Console.Clear();
-            
+            string fileName = "Scores.txt";
+            string path = Path.GetFullPath(fileName);
+            string[] text = System.IO.File.ReadAllLines(path);
+            foreach (string line in text)
+                Console.WriteLine(line);
             Console.Write("\nPress any key to continue.");
             Console.ReadKey();
             Console.Clear();
