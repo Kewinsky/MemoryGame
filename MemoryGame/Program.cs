@@ -18,12 +18,32 @@ namespace HelloWorld
         static bool ifWin = false;
         static Stopwatch timer = new Stopwatch();
 
+        static IDictionary<string, int> inputs = new Dictionary<string, int>()
+        {
+            ["A1"] = 0,
+            ["A2"] = 4,
+            ["A3"] = 8,
+            ["A4"] = 12,
+            ["B1"] = 1,
+            ["B2"] = 5,
+            ["B3"] = 9,
+            ["B4"] = 13,
+            ["C1"] = 2,
+            ["C2"] = 6,
+            ["C3"] = 10,
+            ["C4"] = 14,
+            ["D1"] = 3,
+            ["D2"] = 7,
+            ["D3"] = 11,
+            ["D4"] = 15,
+        };
+
         static void Main()
         {
             difficulty = 0;
             int attempts = 0;
             int chances = 1;
-            int firstSel, secondSel;
+            string firstSel, secondSel;
 
             do
             {
@@ -37,7 +57,6 @@ namespace HelloWorld
                 while (!int.TryParse(Console.ReadLine(), out difficulty) || difficulty <= 0 || difficulty > 3)
                     Console.Write("Not integer or wrong index, try again: ");
                 Console.Clear();
-
                 // --------------------------------------------------------------------------
 
                 // ustawienie odpowiednich parametrow dla danego trybu gry
@@ -79,33 +98,19 @@ namespace HelloWorld
                 // odsloniecie pierwszej karty przez uzytkownika
                 do
                 {
-                    Console.Write("Enter 1st index: ");
-                    while (!int.TryParse(Console.ReadLine(), out firstSel) || firstSel <= 0 || firstSel > covered.Length)
-                        Console.Write("Not integer or wrong index, try again: ");
-                    firstSel--;
-                    if (covered[firstSel] == "x")
+                    int value = 0;
+                    Console.Write("Enter 1st coordinates: ");
+                    do
                     {
-                        valid = true;
-                    }
-                    else
-                    {
-                        Console.Write("\nInvalid input. Enter diffrent index");
-                        valid = false;
-                    }
-                } while (!valid);
+                        firstSel = Console.ReadLine().ToUpper();
+                        if (!inputs.ContainsKey(firstSel) || inputs[firstSel] >= covered.Length)
+                        {
+                            Console.Write("Invalid input, try again: ");
+                        }
 
-                // aktualizacja planszy i wyswietlenie jej na konsoli
-                ShowCovered(firstSel);
-                ShowBoard(attempts, difficulty);
+                    } while (!inputs.ContainsKey(firstSel) || inputs[firstSel] >= covered.Length);
 
-                // odsloniecie drugiej karty przez uzytkownika
-                do
-                {
-                    Console.Write("Enter 2nd index: ");
-                    while (!int.TryParse(Console.ReadLine(), out secondSel) || secondSel <= 0 || secondSel > covered.Length)
-                        Console.Write("Not integer or wrong index, try again: ");
-                    secondSel--;
-                    if (covered[secondSel] == "x")
+                    if (covered[inputs[firstSel]] == "x")
                     {
                         valid = true;
                     }
@@ -117,11 +122,41 @@ namespace HelloWorld
                 } while (!valid);
 
                 // aktualizacja planszy i wyswietlenie jej na konsoli
-                ShowCovered(secondSel);
+                ShowCovered(inputs[firstSel]);
+                ShowBoard(attempts, difficulty);
+
+                // odsloniecie drugiej karty przez uzytkownika
+                do
+                {
+                    int value = 0;
+                    Console.Write("Enter 2nd coordinates: ");
+                    do
+                    {
+                        secondSel = Console.ReadLine().ToUpper();
+                        if (!inputs.ContainsKey(secondSel) || inputs[secondSel] >= covered.Length)
+                        {
+                            Console.Write("Invalid input, try again: ");
+                        }
+
+                    } while (!inputs.ContainsKey(secondSel) || inputs[secondSel] >= covered.Length);
+
+                    if (covered[inputs[secondSel]] == "x")
+                    {
+                        valid = true;
+                    }
+                    else
+                    {
+                        Console.Write("\nInvalid input. Enter diffrent index.");
+                        valid = false;
+                    }
+                } while (!valid);
+
+                // aktualizacja planszy i wyswietlenie jej na konsoli
+                ShowCovered(inputs[secondSel]);
                 ShowBoard(attempts, difficulty);
 
                 // sprawdzenie zgodnosci elementow
-                CheckMatch(covered, firstSel, secondSel);
+                CheckMatch(covered, inputs[firstSel], inputs[secondSel]);
                 Console.Write("\nPress any key to continue.");
                 Console.ReadKey();
                 Console.Clear();
@@ -146,13 +181,24 @@ namespace HelloWorld
             Console.Clear();
         }
 
+        public static void Ranking()
+        {
+            Console.Clear();
+            
+            Console.Write("\nPress any key to continue.");
+            Console.ReadKey();
+            Console.Clear();
+        }
+
         // losowanie haseł i przypisanie ich do tablicy 'uncovered'
         public static string[] Randomizer(int elements)
         {
             Random random = new Random();
 
             // dodanie wszystkich hasel do listy
-            List<string> allWords = File.ReadAllLines(@"C:\Users\kewsw\OneDrive\Pulpit\Coding\C#\MemoryGame\Words.txt").ToList();
+            string fileName = "Words.txt";
+            string path = Path.GetFullPath(fileName);
+            List<string> allWords = File.ReadAllLines(path).ToList();
 
             // lista dla wylosowanych hasel
             List<string> selected = new List<string>();
@@ -176,18 +222,26 @@ namespace HelloWorld
                 uncovered[i] = rndWord;
                 selected.RemoveAt(index);
             }
-
             return uncovered;
         }
 
         // wyswietlenie planszy na konsoli
         static void ShowBoard(int attempts, int difficulty)
         {
+            int line = 1;
             Console.WriteLine($"Difficulty:  {level[difficulty - 1]}");
             Console.WriteLine("Attempts:    {0}\n", attempts);
+            Console.WriteLine("   A|B|C|D|");
             for (int i = 0; i < covered.Length; i++)
             {
-                Console.WriteLine($"{i + 1}.\t{covered[i]}");
+                if (i == 0 || i % 4 == 0)
+                {
+                    Console.Write($"{line}. ");
+                    line++;
+                }
+                Console.Write(covered[i] + "|");
+                if (i == 3 || i == 7 || i == 11)
+                    Console.WriteLine();
             }
             Console.WriteLine("");
         }
@@ -252,7 +306,8 @@ namespace HelloWorld
                 // zapis wyniku do pliku Scores.txt
                 Console.Write("What's your name? ");
                 string name = Console.ReadLine();
-                string path = @"C:\Users\kewsw\OneDrive\Pulpit\Coding\C#\MemoryGame\Scores.txt";
+                string fileName = "Scores.txt";
+                string path = Path.GetFullPath(fileName);
                 File.AppendAllText(path, $"|{name}\t|{timeTaken.ToString(@"m\:ss\.fff")}\t|{chances}\t|" + Environment.NewLine);
 
                 // ponowne uruchomienie gry
@@ -304,4 +359,3 @@ namespace HelloWorld
         }
     }
 }
-
