@@ -125,7 +125,7 @@ namespace HelloWorld
                     }
                     else
                     {
-                        Console.Write("\nInvalid input. Enter diffrent index.");
+                        Console.Write("\nInvalid input. Enter diffrent index.\n");
                         valid = false;
                     }
                 } while (!valid);
@@ -155,7 +155,7 @@ namespace HelloWorld
                     }
                     else
                     {
-                        Console.Write("\nInvalid input. Enter diffrent index.");
+                        Console.Write("\nInvalid input. Enter diffrent index.\n");
                         valid = false;
                     }
                 } while (!valid);
