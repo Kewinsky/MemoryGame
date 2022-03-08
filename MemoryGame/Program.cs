@@ -47,7 +47,12 @@ namespace HelloWorld
 
             do
             {
-                Console.WriteLine("Welcome in  Memory Game!");
+                Console.WriteLine("    __  ___                     ______                   ");
+                Console.WriteLine("   /  |/  /__  ____ ___  ____  / ____/___ _____ ___  ___ ");
+                Console.WriteLine(@"  / /|_/ / _ \/ __ `__ \/ __ \/ / __/ __ `/ __ `__ \/ _ \");
+                Console.WriteLine(" / /  / /  __/ / / / / / /_/ / /_/ / /_/ / / / / / /  __/");
+                Console.WriteLine(@"/_/  /_/\___/_/ /_/ /_/\____/\____/\__,_/_/ /_/ /_/\___/");
+                Console.WriteLine("");
                 Console.WriteLine("1 - easy");
                 Console.WriteLine("2 - hard");
                 Console.WriteLine("3 - info");
