@@ -1,5 +1,5 @@
 # About Me
-I've started my coding journay with simple Python projects in high school and it has become my passion. Today I am a computer science student in engineering studies. I specialize in C #, and I my main goal for the nearest future is to work as a .Net Developer. I am actively looking for my first practices that will expand my competencies and implement them in the IT world. 
+I've started my coding journey with simple Python projects in high school and it has become my passion. Today I am a computer science student in engineering studies. I specialize in C #, and I my main goal for the nearest future is to work as a .Net Developer. I am actively looking for my first practices that will expand my competencies and implement them in the IT world. 
 
 # MemoGame
 1. Welcome Window
