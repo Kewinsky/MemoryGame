@@ -69,7 +69,7 @@ namespace HelloWorld
                 switch (difficulty)
                 {
                     case 1:
-                        elements = 4;
+                        elements = 2;
                         covered = new string[elements * 2];
                         uncovered = new string[elements * 2];
                         attempts = 10;
@@ -317,8 +317,14 @@ namespace HelloWorld
                 Console.WriteLine(time + "\n");
 
                 // zapis wyniku do pliku Scores.txt
-                Console.Write("What's your name? ");
-                string name = Console.ReadLine();
+                string name;
+                do
+                {
+                    Console.Write("What's your name? (max 6 chars) ");
+                    name = Console.ReadLine();
+
+                } while (name.Length > 6);
+                    
                 string fileName = "Scores.txt";
                 string path = Path.GetFullPath(fileName);
                 File.AppendAllText(path, $"|{name}\t|{timeTaken.ToString(@"m\:ss\.fff")}\t|{chances}\t|" + Environment.NewLine);
