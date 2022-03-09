@@ -1,7 +1,7 @@
 # About Me
 I've started my coding journay with simple Python projects in high school and it has become my passion. Today I am a computer science student in engineering studies. I specialize in C #, and I my main goal for the nearest future is to work as a .Net Developer. I am actively looking for my first practices that will expand my competencies and implement them in the IT world. 
 
-# MemoryGame
+# MemoGame
 1. Welcome Window
 ![1](https://user-images.githubusercontent.com/62801668/157441018-b0bfa390-60b8-45d5-86fc-c4066c14bb0b.png)
 2. Easy Mode
