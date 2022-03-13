@@ -1,6 +1,3 @@
-# About Me
-I've started my coding journey with simple Python projects in high school and it has become my passion. Today I am a computer science student in engineering studies. I specialize in C #, and I my main goal for the nearest future is to work as a .Net Developer. I am actively looking for my first practices that will expand my competencies and implement them in the IT world. 
-
 # MemoGame
 Memory Game is game that require players to match similar elements. In this console version participants need to find a match for a word. For example, in Easy Mode there are 16 word cards; composed of 8 pairs, face down in random order. Each person turns over two cards at a time, with the goal of turning over a matching pair, by using their memory. The player can make a maximum of 10 moves. At the end he can enter results on the scoreboard.
 
